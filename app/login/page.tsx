@@ -1,5 +1,3 @@
-// same as the signup page we did, just the endpoint that it hits will be different
-
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -30,28 +28,53 @@ export default function LoginPage() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          name="Email"
-          placeholder="Enter your email"
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          name="Password"
-          placeholder="Enter your password"
-        />
-      </label>
-      <button type="submit">Login</button>
-    </form>
+    <div className="min-h-screen flex items-center justify-center bg-[#FDFBF8] px-4">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-sm bg-white border border-[#E5E2D9] rounded-xl p-8 flex flex-col gap-4"
+      >
+        <h1 className="text-xl font-semibold text-[#2C2C2A] mb-2">
+          Welcome back
+        </h1>
+
+        <label className="flex flex-col gap-1 text-sm text-[#5F5E5A]">
+          Email
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            name="Email"
+            placeholder="Enter your email"
+            className="h-10 px-3 rounded-lg border border-[#E5E2D9] outline-none text-sm text-[#2C2C2A] focus:border-[#D85A30]"
+          />
+        </label>
+
+        <label className="flex flex-col gap-1 text-sm text-[#5F5E5A]">
+          Password
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            name="Password"
+            placeholder="Enter your password"
+            className="h-10 px-3 rounded-lg border border-[#E5E2D9] outline-none text-sm text-[#2C2C2A] focus:border-[#D85A30]"
+          />
+        </label>
+
+        <button
+          type="submit"
+          className="h-10 mt-2 rounded-lg bg-[#D85A30] text-[#FAECE7] text-sm font-medium hover:bg-[#C24E27] transition-colors"
+        >
+          Login
+        </button>
+
+        <p className="text-xs text-[#888780] text-center mt-2">
+          Don&apos;t have an account?{" "}
+          <a href="/signup" className="text-[#D85A30] hover:underline">
+            Sign up
+          </a>
+        </p>
+      </form>
+    </div>
   );
 }
