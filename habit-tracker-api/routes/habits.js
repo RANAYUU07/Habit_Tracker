@@ -7,7 +7,7 @@
 
 import express from "express";
 import protectRoute from "../middleware/authMiddleware.js";
-import Habits from "../models/Habits.js";
+import Habits from "../models/habits.js";
 
 const router = express.Router();
 
