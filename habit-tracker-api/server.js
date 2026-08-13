@@ -24,7 +24,7 @@ app.use("/api/habits", habitRoutes); // setting up all the habit routes
 async function startServer() {
   try {
     await connectDb();
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0", () => {
       console.log(`The server is listening on PORT: ${PORT}`);
     });
   } catch (error) {
