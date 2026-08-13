@@ -36,7 +36,7 @@ function DashboardPAge() {
 
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/habits",
+          `${process.env.NEXT_PUBLIC_API_URL}/api/habits`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -60,7 +60,7 @@ function DashboardPAge() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/habits",
+        `${process.env.NEXT_PUBLIC_API_URL}/api/habits`,
         {
           name: newHabitname,
         },
@@ -84,7 +84,7 @@ function DashboardPAge() {
 
     try {
       const res = await axios.patch(
-        `http://localhost:5000/api/habits/${habitId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/habits/${habitId}`,
         {},
         {
           headers: {
@@ -108,7 +108,7 @@ function DashboardPAge() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/habits/${habitId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/habits/${habitId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
